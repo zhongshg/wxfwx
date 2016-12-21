@@ -1,0 +1,17 @@
+﻿@charset "utf-8";html,body,button,input,select,textarea{color:#444;font-family:微软雅黑,"Microsoft YaHei",Tahoma, Arial;font-size:14px;line-height:23px;margin:0;-webkit-text-size-adjust:none;padding:0}
+a{text-decoration: none;color:#444}
+a:hover{text-decoration:none;color:#298cda}
+ol,ul,li,dl,dt,dd,h1,h2,h3,p,form,em,span,i,img{border:none;padding:0;margin:0;list-style:none;font-style:normal}
+
+.navs{color:#fff;background:#08a0e1;height:40px; line-height:40px; padding:0}
+.navs a{color:#fff;word-break:keep-all;display:block; width:33%; text-align:center; float:left; font-size:16px ;}
+.navs a.on{width:31%; background-color:#FFF; color:#f7732f;height:33px;margin-top:7px; line-height:30px; margin-left:7px; font-weight:bold}
+.navs a:hover{color:#000}
+.navs3 ul{display:inline-block;width:100%;font-size:16px; font-weight:bold;}
+
+
+.box a{height:80px;overflow:hidden; border-bottom:#d6d6d6 1px solid;width:auto; display:block; line-height:70px; padding:10px 8px 0 0}
+.box a img{ float:left; padding:2px; margin:6px 10px 0 6px; border:#cdcdcd 1px solid; width:50px; height:50px;}
+.box a span{font-size:18px;font-weight:bold;color:#298cda; text-decoration:none; padding:10px 0;}
+.box a i{color:#000;font-style:normal; text-decoration:none; padding-left:3px}
+.box a em{ margin-top:6px; color:#888}

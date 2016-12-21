@@ -1,0 +1,80 @@
+@charset "utf-8";
+body
+{
+    margin:0;
+    padding:0;
+    background-color:#11110e;
+
+}
+.edgeLoad-EDGE-30622614 { 
+    visibility:hidden;
+
+}
+.denglu
+{
+    position:fixed;
+    left:33%;
+    top:33%;
+    width:526px;
+    height:331px;
+    background-image:url(../images/dlk.png);
+    background-repeat:no-repeat;
+    background-position:center;
+}
+.logo
+{
+    position:fixed;
+    left:39.8%;
+    top:26%;
+    width:303px;
+    height:98px;
+
+}
+.wbk
+{
+    height:39px;
+    background-image:url(../images/wbk.png);
+    background-repeat:no-repeat;
+    background-position:center;
+}
+.ziti
+{
+    font-family:"宋体";
+    font-size:12px;
+    color:#FFF;
+}
+.text
+{
+    width:200px;
+    height:15px;
+    border-style:none;
+    background-image:url(../images/22.png);
+    padding-left:29px;
+    padding-right:29px;
+    padding-top:2px;
+    padding-bottom:2px;
+    font-family:"黑体";
+    color:#FFF;
+}
+.hongse{
+    color:#F00;
+}
+.wjmm
+{
+    font-family:"微软雅黑";
+    color:#999;
+    font-size:12px;
+}
+.mmts
+{
+    font-family:"微软雅黑";
+    font-size:14px;
+    color:#FFF;
+}
+.jszc
+{
+
+    font-family:"微软雅黑";
+    font-size:16px;
+    color:#FFF;
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<baseElement>
+
+    <global_options>
+        <totask_version>Tot-job-1.1</totask_version>           
+    </global_options>
+    <!--
+            set user database,table,filelds to connect,so that it can login to task
+    -->
+    <user_login_face>
+        <login_action_url>http://wanxiangfangwx.cityapp360.com/</login_action_url>        	
+        <field_userid>UserName</field_userid>
+        <field_password>PassWord</field_password>
+        <cookie_name>gcxm360@126.com</cookie_name>	
+        <member_gate>2088501731438530</member_gate>
+        <member_key>h2qkvxnojji2nx1v1eoti86gk6k49o0k</member_key>
+    </user_login_face>
+    <dboptions>
+        <!--
+         You should NOT change the database_type below
+         By default, database_type = 0
+         NOTE: If your database/driver doesnt support scrollable resultset
+               (such as some OLD version of Interbase/Firebird), set database_type = 2
+        -->
+        <database_type>0</database_type>
+        <!--
+         if use_datasource = false, use the default built-in connection pool
+         if use_datasource = true,  use the connection pool that Servlet Container provides
+        -->
+        <use_datasource>false</use_datasource>
+        <!--
+         Set the below options if you want to use default connection pool
+         This is applied if you set use_datasource = false
+         minutes_between_refresh is the minutes between built-in Connection Pool refreshment
+               Some time your database server is set connection timeout too low, such as
+               5 minutes, that cause the connection auto disconnected. In this case you should
+               set minutes_between_refresh lower than the server connection timeout value
+         NOTE: These values can be obtained from the header of the
+               sql script for your database
+         NOTE: For compatible with future release of mvnForum, we highly
+               recommend that use config your database/driver to use unicode utf8 encoding
+               eg:
+               mysql-driver: com.mysql.jdbc.Driver
+               mysql-url:jdbc:mysql://127.0.0.1/totgb?useUnicode=true&amp;characterEncoding=UTF-8
+        -->
+        <!--<driver_class_name>net.sourceforge.jtds.jdbc.Driver</driver_class_name>
+        <database_url>jdbc:jtds:sqlserver://127.0.0.1:1433;DatabaseName=totgb;User=fdcnews;Password=123321</database_url>
+        --> 
+        
+        <driver_class_name>com.mysql.jdbc.Driver</driver_class_name>
+        <database_url>jdbc:mysql://127.0.0.1/kandejianwx?useUnicode=true&amp;characterEncoding=UTF-8</database_url>
+        <database_user>root</database_user>
+        <database_password></database_password>
+        <max_connection>20</max_connection>
+        <max_time_to_wait>2000</max_time_to_wait>
+        <minutes_between_refresh>1</minutes_between_refresh>
+        <!--
+         Set the Data source name if you want to use Servlet Container connection pool
+         This is applied if you set use_datasource = true
+        -->
+        <datasource_name></datasource_name>
+    </dboptions>    
+    <!--
+     If your server supports sending email without authentication,
+       just let the username and password empty
+     If your server requires authentication, set username and password
+        to the correct values
+    -->
+    <mailoptions>
+        <default_mail_from></default_mail_from>
+        <!--
+         if use_mailsource = false, use the default built-in mail provider
+         if use_mailsource = true,  use the mail source that Servlet Container provides
+        -->
+        <use_mailsource>false</use_mailsource>
+
+        <mail_server>smtp.126.com</mail_server>
+        <username>gcxm360@126.com</username>
+        <password>tlkj88918191</password>
+        <port>25</port>
+        <!--
+         Set the mail source name if you want to use Servlet Container mail resource
+         This is applied if you set use_mailsource = true
+        -->
+        <mailsource_name></mailsource_name>
+    </mailoptions>
+    <!--
+    If you deploy on ROOT, set context_path an empty string
+    -->
+    <paramoptions>
+        <context_path></context_path>
+        <ask_url>http://wanxiangfangwx.cityapp360.com</ask_url>
+        <ask_name>wanxiangfangwx</ask_name>		
+        <cookie_domain>wanxiangfangwx.cityapp360.com</cookie_domain>
+        <!--
+        set the max size(k) of upload photo 
+        -->
+        <enable_upload>true</enable_upload>
+        <upload_photo_ext>gif|jpg</upload_photo_ext>
+        <upload_photo_maxsize>100000</upload_photo_maxsize>
+        <max_posts_per_hour>20</max_posts_per_hour>
+        <max_replys_per_hour>1</max_replys_per_hour>
+        <default_check>1</default_check>
+    </paramoptions>
+    <!--
+    search and index options
+    -->
+    <searchindex>
+        <indexdir>E:\index\job</indexdir>
+        <lucene_analyzer_implementation>org.apache.lucene.analysis.stard.StardAnalyzer</lucene_analyzer_implementation>
+    </searchindex>
+    <!--
+     The timezone of the server
+     Ex: if server is in Vietnam, server_hour_offset = 7
+     Ex: if server is in Mexico , server_hour_offset = -6
+     Ex: if server is in England, server_hour_offset = 0
+    -->
+    <dateoptions>
+        <server_hour_offset>0</server_hour_offset>
+    </dateoptions>    
+    <!--
+     If you want to block certain IP, just config it here
+     Each IP is separated with a character ';'
+     Example: to block 2 IPs 255.255.255.0 and 255.255.255.1,
+     set it as below:
+     blocked_ip = 255.255.255.0;255.255.255.1
+    -->
+    <ipoptions>
+        <blocked_ip>255.255.255.1;255.255.255.2</blocked_ip>
+    </ipoptions>
+    <!-- score set -->
+    <scoreoptions>
+        <postpernum>3</postpernum>
+        <minfetchmoney>113</minfetchmoney>
+        <generaltask>5</generaltask>
+        <mediumtask>3</mediumtask>
+        <joinpernum>1</joinpernum>
+    </scoreoptions>
+</baseElement>

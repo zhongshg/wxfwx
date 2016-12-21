@@ -1,0 +1,46 @@
+.layout-login-area {
+	background-color: #fff;
+	margin: 0 auto;
+	padding-bottom: 1.3em;
+	text-align: center;
+	width: 100%;
+}
+
+.layout-login-area .layout-login {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 0.55em 0.71em;
+	text-align: left;
+}
+
+.layout-login-area a {
+	color: #868686;
+	font-size: 1em;
+}
+
+.layout-login-area .layout-lg-bar {
+	color: #868686;
+	display: inline-block;
+	margin: 0 2px;
+}
+
+.layout-new-fr {
+	float: right;
+}
+
+.layout-version {
+	padding: 0.71em 0 5px;
+}
+
+.layout-version a {
+	color: #6e6e6e;
+	padding: 0 1.16em;
+}
+
+.layout-version a.layout-on {
+	color: #e6242b;
+}
+
+.layout-copyright {
+	color: #999;
+	line-height: 2.5em;
+}

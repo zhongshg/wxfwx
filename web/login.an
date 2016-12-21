@@ -1,0 +1,146 @@
+{
+
+	"HTMLFileName":"login.html",
+	"pref__general__AutoKeyframeProperties":"true",
+	"ModelData":"{\
+\"stage\": {\
+   \"timelines\": {\
+      \"Default Timeline\": {\
+            \"ElementKeyframes\": {\
+                \"${_luxing2}\": [], \
+                \"${_liouxing2Copy2}\": [], \
+                \"${_luxing3Copy}\": [], \
+                \"${_luxing3}\": [], \
+                \"${_liouxing2Copy}\": [], \
+                \"${_Stage}\": [], \
+                \"${_shanguang}\": [], \
+                \"${_luxing}\": [], \
+                \"${_Image2}\": [], \
+                \"${_Image}\": [], \
+                \"${_liouxing2}\": []\
+            }\
+      }\
+   }},\
+\"Preloader\": {\
+   \"timelines\": {\
+\
+   }},\
+\"Down-level\": {\
+   \"timelines\": {\
+\
+   }}\
+}",
+	"Down-level-Default Timeline_playhead_ms":"0",
+	"pref__general__FilterNonAnimatedElements":"false",
+	"pref__general__AutoKeyframePropertiesArmed":"true",
+	"pixelsPerMs":"0.069693712752968",
+	"symbol_stage":{
+		"element_${_luxing3Copy}":{
+			"timelineColor2":"0xba5b89",
+			"timelineColor3":"0x734a5f",
+			"timelineColor":"0xdb619d",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"dummyStageParentWidth":"1800px",
+		"dummyStageParentHeight":"1000px",
+		"element_${_Image}":{
+			"timelineColor2":"0x81aa62",
+			"timelineColor3":"0x5b6c4d",
+			"timelineColor":"0x91c767",
+			"locked":"false",
+			"animationEnabled":"true",
+			"invisible":"false",
+			"timelineTreeOpened":"true"},
+		"element_${_liouxing2Copy2}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"timelineColor":"0xeedf79",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${_Image2}":{
+			"timelineColor2":"0x326a96",
+			"invisible":"false",
+			"timelineColor":"0x2f73ad",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"true",
+			"timelineColor3":"0x385063"},
+		"element_${_luxing2}":{
+			"timelineColor2":"0x107faa",
+			"timelineColor3":"0x295a6d",
+			"timelineColor":"0x008dc8",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${_liouxing2Copy}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
+			"timelineColor":"0xffd46d",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"defaultStageParentHeight":"1000px",
+		"element_${_liouxing2}":{
+			"timelineColor2":"0x1aa38f",
+			"invisible":"false",
+			"timelineColor":"0x00bda4",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true",
+			"timelineColor3":"0x2a6a61",
+			"locked":"false"},
+		"element_${_shanguang}":{
+			"timelineColor2":"0x1095d2",
+			"timelineColor3":"0x29647e",
+			"timelineColor":"0x00a9fa",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"true"},
+		"element_${_luxing}":{
+			"timelineColor2":"0x4fa275",
+			"timelineColor3":"0x456a55",
+			"timelineColor":"0x50bd82",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${_luxing3}":{
+			"timelineColor2":"0xd35d6e",
+			"timelineColor3":"0x7e4b52",
+			"timelineColor":"0xfb657a",
+			"timelineTreeOpened":"false",
+			"animationEnabled":"true"},
+		"element_${_luxingCopy2}":{
+			"timelineColor2":"0x5a558a",
+			"timelineColor3":"0x4a485e",
+			"animationEnabled":"false",
+			"timelineColor":"0x63599f"},
+		"defaultStageParentWidth":"1800px",
+		"element_${_luxingCopy3}":{
+			"timelineColor2":"0xb099ce",
+			"timelineColor3":"0x70657c",
+			"animationEnabled":"false",
+			"timelineColor":"0xceaef4"},
+		"element_${_Stage}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"timelineColor":"0xeedf79",
+			"locked":"false",
+			"animationEnabled":"true",
+			"invisible":"false",
+			"timelineTreeOpened":"false"},
+		"element_${__1}":{
+			"timelineColor2":"0x168c84",
+			"invisible":"true",
+			"timelineColor":"0x00a096",
+			"animationEnabled":"false",
+			"timelineColor3":"0x2a605c"}},
+	"TransitionIdCounter":"555",
+	"symbol_Down-level":{
+		"defaultStageParentWidth":"1800px",
+		"defaultStageParentHeight":"1000px",
+		"dummyStageParentWidth":"1800px",
+		"dummyStageParentHeight":"1000px"},
+	"StageZoomFactor":"50",
+	"colorSwatches":"rgba(255,255,255,1.00)",
+	"viewStartY":"93",
+	"pref__general__TimelineShowGrid":"true",
+	"usedBOM":"false",
+	"nextElementColorIndex":"2",
+	"stage-Default Timeline_playhead_ms":"10240",
+	"CompZoomFactor":"100",
+	"stage-Default Timeline_mark_ms":"-1",
+	"pref__general__GenerateSmoothTransitions":"true"}
