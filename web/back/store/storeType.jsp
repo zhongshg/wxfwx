@@ -63,7 +63,7 @@
 			<div class="content-box">
 				<!-- Start Content Box -->
 				<div class="content-box-header">
-					<h3>图文页面管理</h3>
+					<h3>店铺类别管理</h3>
 					<ul class="content-box-tabs">
 						<li><a href="#tab1" class="default-tab">Table</a></li>
 					</ul>

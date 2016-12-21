@@ -25,7 +25,7 @@
 		Map<String, String> targetsubscriber = new HashMap<String, String>();
 		String targetopenid = request.getParameter("targetopenid");
 		new SubscriberService().addSubscriber(wx, openid);
-	} else if(openid == null){
+	}else if(openid == null){
 		out.println("<script>alert(\"微信校验错误，请联系公众号管理员!\");</script>");
 		return;
 	}
@@ -65,8 +65,8 @@
 
 #loading-logo {
 	position: absolute;
-	left: 45%;
-	top: 30%;
+	left: 37%;
+	top: 25%;
 	height: 200px;
 	width: 200px;
 	margin-top: -100px;
@@ -76,7 +76,7 @@
 #loading-center-absolute {
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	top: 60%;
 	height: 200px;
 	width: 200px;
 	margin-top: -100px;

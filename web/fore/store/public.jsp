@@ -11,7 +11,7 @@
 <%@page import="job.tot.bean.DataField"%>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <%
-	String sid = "1";//(String)request.getSession().getAttribute("sid");
+	String sid = "1";
 	String areaCode = (String) session.getAttribute("areaCode");
 	String lat = (String) session.getAttribute("lat");
 	String lon = (String) session.getAttribute("lon");
@@ -25,7 +25,6 @@
 	String openid = (String) session.getAttribute("openid");
 	if (openid == null) {
 		out.println("<script>confirm(\"当前链接已经失效，请重新登陆!\");window.opener=null;window.open('','_self');window.close();</script>");
-		//response.sendRedirect(request.getContextPath() + "/IndexServlet?method=go&wx=1#mp.weixin.qq.com");
 		return;
 	}
 %>

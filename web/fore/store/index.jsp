@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="wap.wx.dao.BannerDao" %>
 <%@include file="public.jsp"%>
 <%
 	Map<String, String> storetype = new HashMap<String, String>();
@@ -15,16 +16,16 @@
 	request.setAttribute("pu", pu);
 	request.setAttribute("sid", sid);
 	//开始获取地址信息
-	district = request.getParameter("dist")==null?district:request.getParameter("dist");
-	areaCode = request.getParameter("areaCode")==null?areaCode:request.getParameter("areaCode");
+	district = request.getParameter("dist") == null ? district : request.getParameter("dist");
+	areaCode = request.getParameter("areaCode") == null ? areaCode : request.getParameter("areaCode");
 	if ((district == null && areaCode == null) || district.length() == 0) {
 		district = "历城区";
 		areaCode = "370112";
 	}
-	lat = request.getParameter("lat")==null?areaCode:request.getParameter("lat");
-	lon = request.getParameter("lon")==null?areaCode:request.getParameter("lon");
-	
-	if(request.getParameter("lat") != null){
+	lat = request.getParameter("lat") == null ? areaCode : request.getParameter("lat");
+	lon = request.getParameter("lon") == null ? areaCode : request.getParameter("lon");
+
+	if (request.getParameter("lat") != null) {
 		request.getSession().setAttribute("district", district);
 		request.getSession().setAttribute("lon", lon);
 		request.getSession().setAttribute("lat", lat);
@@ -39,8 +40,12 @@
 	request.getSession().setAttribute("p_areaCode", p_areaCode);
 	List<Map<String, String>> list = areaDao.getList(Integer.parseInt(p_areaCode));
 	request.setAttribute("areaList", list);
-	
 	request.setAttribute("path", request.getContextPath());
+	
+	//开始获取首页推荐店铺信息
+	BannerDao bannerDao = new BannerDao();
+	List<Map<String, String>> bannerList = bannerDao.getList(Integer.parseInt(sid));
+	request.setAttribute("bannerList", bannerList);
 %>
 <!DOCTYPE html>
 <html>
@@ -87,7 +92,8 @@
 						<input autocomplete="off" id="input-main-nav-search"
 							class="form-control" placeholder="店铺搜索！" type="text"> <span
 							class="input-group-btn">
-							<button class="btn5 submit" type="submit" id="btnSearch" onclick="indexSearch()">
+							<button class="btn5 submit" type="submit" id="btnSearch"
+								onclick="indexSearch()">
 								<i class="search-icon"></i>
 							</button>
 						</span>
@@ -99,32 +105,16 @@
 			<a href="map.jsp"><img src="images/logo-zn.png" width="20"></a>
 		</div>
 	</div>
-	<div>
-		<img src="images/kj_01.png" width="100%">
-	</div>
-	<div class="kan001">
-		<c:forEach items="${pu.list}" var="storeType">
-			<a href="storeList.jsp?tid=${storeType.id}">${storeType.tname}</a>
-		</c:forEach>
-		<a href="moreType.jsp?sid=${sid}">更多</a>
-	</div>
-	<div>
-		<img src="images/kj_01.png" width="100%">
-	</div>
 	<div class="banner openwebview">
 		<div style="-webkit-transform: translate3d(0, 0, 0);">
 			<div id="banner_box" class="box_swipe">
 				<ul
 					style="list-style: none outside none; transition-duration: 500ms;">
-					<li><a onClick="return false;"> <img src="images/3.png"
-							alt="2" style="width: 100%;">
-					</a></li>
-					<li><a onClick="return false;"> <img src="images/1.png"
-							alt="2" style="width: 100%;">
-					</a></li>
-					<li><a onClick="return false;"> <img src="images/2.png"
-							alt="2" style="width: 100%;">
-					</a></li>
+					<c:forEach items="${bannerList }" var="banner">
+						<li><a href="storeView.jsp?tid=${banner.code}"> <img src="${path}${banner.img }" 
+								alt="2" style="width: 100%;">
+						</a></li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
@@ -141,76 +131,91 @@
 			});
 		</script>
 	</div>
+	<div class="kan001">
+		<ul>
+			<c:forEach items="${pu.list}" var="storeType">
+				<li><a href="storeList.jsp?tid=${storeType.id}">${storeType.tname}</a></li>
+			</c:forEach>
+			<li><a href="moreType.jsp?sid=${sid}">更多</a></li>
+		</ul>
+	</div>
 	<div class="recommend openwebview">
 		<div class="wrap">
-			<div class="item" >
-				<div class="item_con clearfix" ></div>
+			<div class="item">
+				<div class="item_con clearfix"></div>
 			</div>
 		</div>
 	</div>
 	<script>
-		function changeArea(){
+		function changeArea() {
 			//切换地域的时候  更换底部店铺信息
 			var district = $('#areaSelect').val();
 			init(district);
 		}
-		
-		$(window).load(function(){
-		    //要执行的方法体
-		    var district = '${sessionScope.areaCode}';
+
+		$(window).load(function() {
+			//要执行的方法体
+			var district = '${sessionScope.areaCode}';
 			init(district);
 		});
-		function init(district){
+		function init(district) {
 			$(".item_con").html("");
 			$.ajax({
-				url: '${path}/IndexServlet?method=indexStore',
-				type: 'post',	                
-	            data:{
+				url : '${path}/IndexServlet?method=indexStore',
+				type : 'post',
+				data : {
 					page : 1,
 					sid : '${sessionScope.sid}',
 					//tid : tid,
 					district : district,
 					lat : '${sessionScope.lat}',
 					lon : '${sessionScope.lon}'
-					//orders : orders
+				//orders : orders
 				},
-	            dataType: 'json',
-	            success: function (data) {
-	            	eachData(data);
-	            },
-	            error: function (data) {
-	            	alert("error");
-					return false; 
-	            }
-	          });
+				dataType : 'json',
+				success : function(data) {
+					eachData(data);
+				},
+				error : function(data) {
+					alert("error");
+					return false;
+				}
+			});
 		}
-		//onclick=\"javascript:window.location.href='storeView.jsp?tid="+array.id+"'
-		function eachData(data){
-			if(data && data.length >= 1 ){
-				$.each(data,function(index,array){ 
+		function eachData(data) {
+			if (data && data.length >= 1) {
+				$.each(
+					data,
+					function(index, array) {
 					var juli = '';
-					if(array.juli.length < 5){
-						juli += array.juli+"m";
-					}else{
-						juli += array.juli/1000+"km";
+					if (array.juli.length < 5) {
+						juli += array.juli + "m";
+					} else {
+						juli += array.juli / 1000 + "km";
 					}
-					var str = "<dl><p class=\"txt2\">"+array.name+"</p>"; 
-					str += "<dt><a href=\"storeView.jsp?tid="+array.id+"\" data-url=\"\"><img src=\""+array.img+"\""; 
-					str += " width=\"110px\" height=\"60px\" class=\"fadeInImg\"></a></dt>";
-					str += "</dt><dd><p class=\"txt\">"+array.name+"</p>"; 
+					var str = "<dl><p class=\"txt2\">"
+							+ array.name + "</p>";
+					str += "<dt><a href=\"storeView.jsp?tid="
+							+ array.id
+							+ "\" data-url=\"\"><img src=\""+array.img+"\""; 
+					str += " width=\"44%\" height=\"60px\" class=\"fadeInImg\"></a></dt>";
+					str += "</dt><dd><p class=\"txt\">"
+							+ array.name + "</p>";
 					str += "<div class=\"price clearfix\">";
-					str += "<span class=\"now_price\" \"><em>"+juli+"</em></span>";
+					str += "<span class=\"now_price\" \"><em>"
+							+ juli + "</em></span>";
 					str += "</div></dd></dl>";
-					$(".item_con").append(str); 
-				});  
-			}else{
-				return false; 
+					$(".item_con").append(str);
+				});
+			} else {
+				return false;
 			}
 		}
-		function indexSearch(){
+		function indexSearch() {
 			var val = $('#input-main-nav-search').val();
-			window.location.href=encodeURI(encodeURI("search.jsp?sr="+val));
+			window.location.href = encodeURI(encodeURI("search.jsp?sr=" + val));
 		}
 	</script>
+
 </body>
 </html>

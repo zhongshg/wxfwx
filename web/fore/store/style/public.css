@@ -1393,7 +1393,7 @@ rotate
 	display: block;
 	width: 100%;
 	margin-bottom: 8px;
-	min-height: 183px;
+	min-height: 130px;
 	clear: both;
 }
 
@@ -1504,8 +1504,7 @@ rotate
 	}
 }
 
-@
--webkit-keyframes fadeIn {from { opacity:0
+@-webkit-keyframes fadeIn {from { opacity:0
 	
 }
 
@@ -1514,8 +1513,7 @@ to {
 }
 
 }
-@
-keyframes fadeIn {from { opacity:0
+@keyframes fadeIn {from { opacity:0
 	
 }
 
@@ -1589,7 +1587,8 @@ img {
 
 .searchnew {
 	float: left;
-	width: 60%;
+	margin-left:8%;
+	width: 50%;
 }
 
 .products-search-item {

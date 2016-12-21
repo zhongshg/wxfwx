@@ -85,6 +85,7 @@ public class StoreServlet extends BaseServlet {
 		store.put("zcode", request.getParameter("zcode"));
 		store.put("cityCode", request.getParameter("cityCode"));
 		store.put("street", request.getParameter("street"));
+		store.put("vid", request.getParameter("vid")==null?"":request.getParameter("vid"));
 		if ("0".equals(store.get("id"))) {
 			storeDao.add(store);
 		} else {
@@ -120,7 +121,7 @@ public class StoreServlet extends BaseServlet {
 				java.io.File oldFile = new java.io.File(this.getServletContext().getRealPath(store.get("img")));
 				oldFile.delete();
 			}
-			new GgiService().deleteGat(store);
+			//new GgiService().deleteGat(store);
 		}
 		response.sendRedirect(
 				request.getContextPath() + "/servlet/StoreServlet?method=getList&sid=" + request.getParameter("sid"));

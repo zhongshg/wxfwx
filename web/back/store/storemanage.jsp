@@ -257,10 +257,10 @@ a:hover {
 										</c:forEach>
 									</select>
 								</p>
-								<p>
+								<%-- <p>
 									<label>店铺编号</label> <input class="text-input large-input"
 										type="text" id="code" name="code" value="${store.code}" />
-								</p>
+								</p> --%>
 								<p>
 									<label>店铺名称</label> <input class="text-input large-input"
 										type="text" id="name" name="name" value="${store.name}" />
@@ -293,6 +293,10 @@ a:hover {
                                                 请上传图片
                                             </c:if>
 								</div>
+								<p>
+									<label>视频链接</label> <input class="text-input large-input"
+										type="text" id="vid" name="vid" value="${store.vid}" onblur="splitVid(this)"/>
+								</p>
 								<p>
 									<label>店铺描述</label>
 									<textarea class="text-input" id="content" name="content"
@@ -702,6 +706,21 @@ a:hover {
 								local.search(myValue);
 							}
 						});
+		//https://v.qq.com/x/cover/v9wsovm3avlt7y2/q0022sp0yap.html
+		function splitVid(video){
+			var url = video.value;
+			if(url.indexOf("v.qq.com") > 0 ){
+				var arr = url.split("/");
+				var html = arr[arr.length-1];
+				if(html.indexOf("htm") > 0.){
+					var vids = html.split(".");
+					if(vids.length == 2){
+						var vid = vids[0];
+						video.value = vid;
+					}
+				}
+			}
+		}
 	</script>
 </body>
 </html>

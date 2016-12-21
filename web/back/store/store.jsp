@@ -59,29 +59,13 @@
 							src="${pageContext.servletContext.contextPath}/resources/images/icons/pencil_48.png"
 							alt="icon" /><br /> 添加
 					</span></a></li>
-				<li><a class="shortcut-button" href="#"><span> <img
-							src="${pageContext.servletContext.contextPath}/resources/images/icons/paper_content_pencil_48.png"
-							alt="icon" /><br /> &nbsp;
-					</span></a></li>
-				<li><a class="shortcut-button" href="#"><span> <img
-							src="${pageContext.servletContext.contextPath}/resources/images/icons/image_add_48.png"
-							alt="icon" /><br /> &nbsp;
-					</span></a></li>
-				<li><a class="shortcut-button" href="#"><span> <img
-							src="${pageContext.servletContext.contextPath}/resources/images/icons/clock_48.png"
-							alt="icon" /><br /> &nbsp;
-					</span></a></li>
-				<li><a class="shortcut-button" href="#"><span> <img
-							src="${pageContext.servletContext.contextPath}/resources/images/icons/comment_48.png"
-							alt="icon" /><br /> &nbsp;
-					</span></a></li>
 			</ul>
 			<div class="clear"></div>
 			<!-- End .clear -->
 			<div class="content-box">
 				<!-- Start Content Box -->
 				<div class="content-box-header">
-					<h3>图文页面管理</h3>
+					<h3>店铺管理</h3>
 					<ul class="content-box-tabs">
 						<li><a href="#tab1" class="default-tab">Table</a></li>
 					</ul>
@@ -131,7 +115,7 @@
 									<tr>
 										<td><input type="checkbox" name="gatckb"
 											value="${store.id}" /></td>
-										<td>${store.code}</td>
+										<td>${store.id}</td>
 										<td>${store.name}</td>
 										<td><img
 											src="${store.img}"
