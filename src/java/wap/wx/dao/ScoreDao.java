@@ -63,10 +63,11 @@ public class ScoreDao extends AbstractDao {
 	public boolean add(String content, int sid, String openid, String uid, int tid, int level) {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		boolean returnValue = true;
+		boolean returnValue = false;
 		String sql = "insert into k_score(content,sid,openid,uid,tid,level) values(?,?,?,?,?,?)";
 		try {
 			conn = DbConn.getConn();
+			conn.setAutoCommit(returnValue);
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, content);
 			ps.setInt(2, sid);
@@ -74,9 +75,22 @@ public class ScoreDao extends AbstractDao {
 			ps.setString(4, uid);
 			ps.setInt(5, tid);
 			ps.setInt(6, level);
-			if (ps.executeUpdate() != 1) {
-				returnValue = false;
+			if (ps.executeUpdate() == 1) {
+				returnValue = true;
 			}
+			
+			//当添加新评分时，更新店铺的评分
+			if(returnValue){
+				returnValue = this.average(conn, tid, level);
+			}
+			//end 更新评分
+			//如果成功  提交结果，如果不成功事务回滚
+			if(returnValue){
+				conn.commit();
+			}else{
+				conn.rollback();
+			}
+			//END
 		} catch (SQLException e) {
 			e.printStackTrace();
 			log.error("add score error", e);
@@ -204,5 +218,30 @@ public class ScoreDao extends AbstractDao {
 
 	public int getMaxId() {
 		return getDataCount("select max(id) from k_score");
+	}
+
+	/**
+	 * 根据传入的评分和店铺id更新店铺的总评分
+	 */
+	public boolean average(Connection conn, int tid, int score) {
+		boolean flag = false;
+		PreparedStatement ptst = null;
+		ResultSet rs = null;
+		try {
+			// 查询这个店铺的总评分
+			String sql = "update k_store set scores = scores+?,pnum = pnum+1, favorate=scores/pnum where id=?";
+			ptst = conn.prepareStatement(sql);
+			ptst.setInt(1, score);
+			ptst.setInt(2, tid);
+			int num = ptst.executeUpdate();
+			if (num == 1) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			DbConn.getAllClose(conn, ptst, rs);
+			log.debug("ScoreDao.average() run error", e);
+			e.printStackTrace();
+		}
+		return flag;
 	}
 }
