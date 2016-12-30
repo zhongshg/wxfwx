@@ -26,18 +26,18 @@
 	lon = request.getParameter("lon") == null ? areaCode : request.getParameter("lon");
 
 	if (request.getParameter("lat") != null) {
-		request.getSession().setAttribute("district", district);
-		request.getSession().setAttribute("lon", lon);
-		request.getSession().setAttribute("lat", lat);
-		request.getSession().setAttribute("areaCode", areaCode);
-		request.getSession().setAttribute("sid", sid);
+		session.setAttribute("district", district);
+		session.setAttribute("lon", lon);
+		session.setAttribute("lat", lat);
+		session.setAttribute("areaCode", areaCode);
+		session.setAttribute("sid", sid);
 	}
 
 	//开始获取地域信息
 	AreaDao areaDao = new AreaDao();
 	//获取所有最上级地址
 	p_areaCode = areaCode.substring(0, 4) + "00";
-	request.getSession().setAttribute("p_areaCode", p_areaCode);
+	session.setAttribute("p_areaCode", p_areaCode);
 	List<Map<String, String>> list = areaDao.getList(Integer.parseInt(p_areaCode));
 	request.setAttribute("areaList", list);
 	request.setAttribute("path", request.getContextPath());

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="wxfwx">
+    <wb-module deploy-name="kanjianweidaowx">
         <wb-resource deploy-path="/" source-path="/web" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java"/>
-        <property name="context-root" value="wxfwx"/>
-        <property name="java-output-path" value="/wxfwx/build/classes"/>
+        <property name="java-output-path" value="/kanjianweidaowx/build/classes"/>
+        <property name="context-root" value="kanjianweidaowx"/>
     </wb-module>
 </project-modules>

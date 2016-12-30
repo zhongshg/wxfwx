@@ -92,7 +92,7 @@
                         dataType: "json",
                         data: {
                             openid: "${openid}",
-                            aid: ${activity.id}
+                            aid: '${activity.id}'
                         },
 //                        beforeSend: function() {
 //                            timer = setInterval(function() {
