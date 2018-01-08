@@ -5,7 +5,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 <%@page import="wap.wx.dao.StoreTypeDAO"%>
-<%@include file="public.jsp" %>
+<%@include file="public.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,8 +23,7 @@
 <meta name="baidu-tc-cerfication" content="">
 <meta name="360-site-verification" content="">
 <link rel="stylesheet" type="text/css" href="style/css.css">
-<script type="text/javascript" src="js/js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/js/comment.js"></script>
+<script type="text/javascript" src="js/comment.js"></script>
 <style type="text/css">
 </style>
 

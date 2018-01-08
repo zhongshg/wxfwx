@@ -23,10 +23,10 @@
 	request.setAttribute("path", request.getContextPath());
 	request.setAttribute("ak", "54323E3C9a3aaee75d3d4bbd48a373a9");
 	String openid = (String) session.getAttribute("openid");
-	if (openid == null) {
+	/*  if (openid == null) {
 		out.println("<script>confirm(\"当前链接已经失效，请重新登陆!\");window.opener=null;window.open('','_self');window.close();</script>");
 		return;
-	}
+	}  */
 %>
 <script type="text/JavaScript"
 	src="http://api.map.baidu.com/api?v=2.0&ak=${ak}"></script>

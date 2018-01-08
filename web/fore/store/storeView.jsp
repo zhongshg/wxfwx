@@ -53,7 +53,7 @@
 		out.println("<script>alert(\"" + tips + "\");</script>");
 	}
 %>
-<script type="text/javascript" src="js/js/js.js"></script>
+<script type="text/javascript" src="js/tab.js"></script>
 <script type="text/javascript" src="js/zepto.js"></script>
 </head>
 
@@ -73,10 +73,8 @@
 	</header>
 	<iframe class="video_iframe" data-vidtype="1"
 		style="position: relative; z-index: 1;" height="260px" width="100%"
-		frameborder="0"
-		src="player.jsp?vid=${store.vid }" scrolling="no"
-		allowfullscreen="">
-	</iframe>
+		frameborder="0" src="player.jsp?vid=${store.vid }" scrolling="no"
+		allowfullscreen=""> </iframe>
 	<!-- <div id="mod_player" class="mod_player"></div> -->
 	<!--商品清单-->
 	<div class="userdiv">
@@ -172,16 +170,17 @@
 
 		function eachData(data) {
 			if (data.length >= 1) {
-				$.each(
-				data,
-				function(index, array) {
-					var str = "<tr><td width=\"12%\" rowspan=\"2\"><img src=\"images/kj_04.png\" "; 
+				$
+						.each(
+								data,
+								function(index, array) {
+									var str = "<tr><td width=\"12%\" rowspan=\"2\"><img src=\"images/kj_04.png\" "; 
 					str += "width=\"60\" height=\"60\"></td><td width=\"88%\">";
-					str += " </td></tr><tr><td height=\"57\"><span class=\"an\">评语:</span>"
-							+ array.content + "</td>";
-					str += " class=\"l\" height=\"80\" width=\"80\"><div class=\"user_orderlist_r\"></tr>";
-					$(".py").append(str);
-				});
+									str += " </td></tr><tr><td height=\"57\"><span class=\"an\">评语:</span>"
+											+ array.content + "</td>";
+									str += " class=\"l\" height=\"80\" width=\"80\"><div class=\"user_orderlist_r\"></tr>";
+									$(".py").append(str);
+								});
 			} else {
 				return false;
 			}
